@@ -24,6 +24,61 @@ body {
 
     background: linear-gradient(135deg, #a8c0ff, #3f2b96);
 }
+.minesweeper {
+    position: fixed;
+    left: max(20px, calc((100vw - 1120px) / 2));
+    top: 50%;
+    transform: translateY(-50%);
+    width: 310px;
+    padding: 16px;
+    border: 1px solid #ffffff60;
+    border-radius: 16px;
+    background: #ffffff24;
+    color: #fff;
+    box-shadow: 0 12px 40px #241d5520;
+}
+.mine-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.mine-heading h2 { font-size: 15px; }
+.minesweeper button { cursor: pointer; font: inherit; }
+.mine-heading button { border: 0; border-radius: 6px; padding: 7px; background: #ffffffd9; color: #45356b; font-size: 11px; }
+.mine-board-wrap { position: relative; overflow: hidden; margin-top: 10px; border-radius: 6px; }
+.mine-result {
+    position: absolute;
+    left: -20%;
+    top: 50%;
+    width: 140%;
+    padding: 16px 0;
+    transform: translateY(-50%) rotate(-18deg);
+    background: #8c233bef;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.4;
+    box-shadow: 0 4px 20px #241d5550;
+    pointer-events: none;
+}
+.mine-result.is-win { background: #23634fef; }
+.mine-result-time {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.mine-result[hidden] { display: none; }
+.mine-board { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 3px; margin: 10px 0; }
+.mine-cell { aspect-ratio: 1; min-width: 0; padding: 0; border: 1px solid #ffffff60; border-radius: 4px; background: #ffffff75; color: #352368; font-size: 14px; }
+.mine-cell:hover:not(:disabled) { background: #fff; transform: translateY(-1px); }
+.mine-cell.is-open { background: #ffffff24; border-color: transparent; }
+.mine-cell.is-mine { background: #f8b8bd; }
+.mine-cell[data-count="2"] { color: #125d43; }
+.mine-cell[data-count="3"] { color: #8c233b; }
+.minesweeper button:focus-visible { outline: 3px solid #ffc5c6; outline-offset: 2px; }
+@media (max-width: 1120px) {
+    .body-container { position: relative !important; left: auto !important; top: auto !important; transform: none !important; }
+    .minesweeper { position: relative; left: auto; top: auto; transform: none; width: min(90%, 310px); margin: 24px auto 0; }
+    body { display: flex; flex-direction: column; }
+    .body-container { order: -1; }
+}
 .body-container {
     max-width: 420px;
     width: 80%;

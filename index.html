@@ -10,6 +10,13 @@
 </head>
 
 <body>
+  <aside class="minesweeper" aria-label="지뢰찾기">
+    <div class="mine-heading"><h2>지뢰찾기</h2><button id="mine-reset" type="button">새 게임 ↻</button></div>
+    <div class="mine-board-wrap">
+      <div id="mine-board" class="mine-board" aria-label="지뢰찾기 게임판"></div>
+      <div id="mine-result" class="mine-result" role="status" aria-live="polite" hidden></div>
+    </div>
+  </aside>
   <div class="body-container">
     <header class="body-header">
       <h1>김은성입니다</h1>
@@ -54,6 +61,7 @@
       </section>
     </main>
   </div>
+  <script src="./minesweeper.js" defer></script>
 </body>
 
 </html>
