@@ -17,6 +17,14 @@
       <div id="mine-result" class="mine-result" role="status" aria-live="polite" hidden></div>
     </div>
   </aside>
+  <aside class="game-2048" aria-label="2048 게임">
+    <div class="mine-heading"><h2>2048</h2><button id="tile-reset" type="button">새 게임 ↻</button></div>
+    <div class="tile-scores"><span>점수 <b id="tile-score">0</b></span><span>최고 <b id="tile-best">0</b></span></div>
+    <div class="mine-board-wrap">
+      <div id="tile-board" class="tile-board" tabindex="0" role="group" aria-label="2048 게임판. 방향키 또는 스와이프로 조작"></div>
+      <div id="tile-result" class="mine-result" role="status" aria-live="polite" hidden></div>
+    </div>
+  </aside>
   <div class="body-container">
     <header class="body-header">
       <h1>김은성입니다</h1>
@@ -62,6 +70,7 @@
     </main>
   </div>
   <script src="./minesweeper.js" defer></script>
+  <script src="./2048.js" defer></script>
 </body>
 
 </html>

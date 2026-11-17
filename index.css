@@ -17,26 +17,36 @@ html {
     color: black;
 }
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 32px);
     position: relative;
-    width: 100dvw;
+    width: 100%;
     min-height: 100dvh;
-    padding: 5dvh 0;
+    padding: 5dvh 24px;
 
     background: linear-gradient(135deg, #a8c0ff, #3f2b96);
 }
-.minesweeper {
-    position: fixed;
-    left: max(20px, calc((100vw - 1120px) / 2));
-    top: 50%;
-    transform: translateY(-50%);
-    width: 310px;
-    padding: 16px;
+.minesweeper, .game-2048 {
+    flex: 1 1 400px;
+    min-width: 0;
+    max-width: 400px;
+    padding: clamp(8px, 1.2vw, 16px);
     border: 1px solid #ffffff60;
     border-radius: 16px;
     background: #ffffff24;
     color: #fff;
     box-shadow: 0 12px 40px #241d5520;
 }
+.minesweeper { order: 0; }
+.game-2048 { order: 2; }
+.tile-scores { display: flex; gap: 18px; font-size: 12px; margin: 14px 0; }
+.tile-scores b { margin-left: 6px; }
+.tile-board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; padding: 7px; background: #34225b40; border-radius: 8px; touch-action: none; user-select: none; }
+.tile { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; border-radius: 5px; background: #ffffff25; color: #513746; font-size: 23px; }
+.game-2048 button { cursor: pointer; font: inherit; font-size: 11px; }
+.tile-board:focus-visible, .game-2048 button:focus-visible { outline: 3px solid #ffc5c6; outline-offset: 3px; }
 .mine-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .mine-heading h2 { font-size: 15px; }
 .minesweeper button { cursor: pointer; font: inherit; }
@@ -73,26 +83,18 @@ body {
 .mine-cell[data-count="2"] { color: #125d43; }
 .mine-cell[data-count="3"] { color: #8c233b; }
 .minesweeper button:focus-visible { outline: 3px solid #ffc5c6; outline-offset: 2px; }
-@media (max-width: 1120px) {
-    .body-container { position: relative !important; left: auto !important; top: auto !important; transform: none !important; }
-    .minesweeper { position: relative; left: auto; top: auto; transform: none; width: min(90%, 310px); margin: 24px auto 0; }
-    body { display: flex; flex-direction: column; }
-    .body-container { order: -1; }
-}
 .body-container {
+    order: 1;
+    flex: 0 0 420px;
     max-width: 420px;
-    width: 80%;
-    margin: 0 auto;
+    width: 420px;
+    margin: 0;
     border: 1px solid black;
     padding: 16px;
     background: rgba(255, 255, 255, 0.85);
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 
     display: flex;
     flex-direction: column;
@@ -259,4 +261,9 @@ button.link-card:hover .link-btn-text {
 @media (max-width: 360px) {
     .body-container { width: 94%; }
     .has-recommendation { grid-template-columns: minmax(0, 1fr) 100px; gap: 10px; }
+}
+@media (max-width: 860px), (max-width: 1000px) and (orientation: portrait) {
+    body { flex-direction: column; gap: 24px; padding: 24px 12px; }
+    .body-container { order: -1; flex: 0 0 auto; width: min(100%, 420px); }
+    .minesweeper, .game-2048 { flex: 0 0 auto; width: min(100%, 400px); padding: 16px; }
 }
