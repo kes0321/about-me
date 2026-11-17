@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김은성 기록 모음</title>
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김은성 기록 모음</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
-    <div class="body-container">
-        <header class="body-header">
-            <h1>김은성 기록 모음</h1>
-            <p>이것저것 기록해 놓은 게 좀 있는데 너무 여기저기 해놔서 한 곳에 모을 필요가 있었음</p>
-        </header>
-        <main class="body-links-container">
-            <button class="link-card" onclick="window.location.href='https://chunbae0-dev.tistory.com/'">
-                <div class="link-title">공부</div>
-                <div class="link-desc">이것저것 정보 위주 + 독서록</div>
-                <div class="link-btn-text">발전하는 춘배 - 티스토리</div>
-              </button>
-              
-              <button class="link-card" onclick="window.location.href='https://blog.naver.com/chunbae0-life'">
-                <div class="link-title">일상, 생각</div>
-                <div class="link-desc">이것저것 잡다한 생각들</div>
-                <div class="link-btn-text">일상적 춘배 - 네이버 블로그</div>
-              </button>
-              
-              <button class="link-card" onclick="window.location.href='https://www.youtube.com/@%EA%B9%80%EC%9D%80%EC%84%B1-y3f'">
-                <div class="link-title">취미</div>
-                <div class="link-desc">드럼 공연 영상 모음</div>
-                <div class="link-btn-text">김은성 - 유튜브</div>
-              </button>
-              
-              <button class="link-card" onclick="window.location.href='https://www.instagram.com/es_03.21?igsh=MTJsY3J2ZnZwbXJwdA=='">
-                <div class="link-title">사진</div>
-                <div class="link-desc">사진으로 기억해보기</div>
-                <div class="link-btn-text">es_03.21 - 인스타그램</div>
-              </button>
-        </main>
-    </div>    
+  <div class="body-container">
+    <header class="body-header">
+      <h1>김은성입니다</h1>
+      <p>반갑습니다</p>
+    </header>
+    <main class="body-links-container">
+      <section class="link-card has-recommendation">
+        <div class="card-info">
+          <div class="link-title">공부</div>
+          <div class="link-desc">이것저것 정보 위주 + 독서록</div>
+          <a class="link-btn-text" href="https://chunbae0-dev.tistory.com/">발전하는 춘배 - 티스토리</a>
+        </div>
+        <a class="recommended-link" href="https://chunbae0-dev.tistory.com/53" target="_blank" rel="noopener noreferrer">
+          <img class="recommendation-image" src="./book-thumbnail.png" loading="lazy">
+          <span class="recommendation-label">추천 글 ↗</span>
+          <span class="recommendation-title">[독서] 이별이 비극이 되지 않으려면; 『너의 췌장을 먹고 싶어』</span>
+          </a>
+      </section>
+
+      <section class="link-card has-recommendation">
+        <div class="card-info">
+          <div class="link-title">취미</div>
+          <div class="link-desc">드럼 공연 영상 모음</div>
+          <a class="link-btn-text" href="https://www.youtube.com/@%EA%B9%80%EC%9D%80%EC%84%B1-y3f">김은성 - 유튜브</a>
+        </div>
+        <a class="recommended-link" href="https://www.youtube.com/watch?v=xoGqUtD0v8A" target="_blank"
+          rel="noopener noreferrer"><img class="recommendation-image"
+            src="https://i.ytimg.com/vi/xoGqUtD0v8A/hqdefault.jpg" alt="" loading="lazy"
+            referrerpolicy="no-referrer"><span class="recommendation-label">추천 영상 ↗</span><span
+            class="recommendation-title">윤하 - 오르트구름 (20241122 RCM)</span></a>
+      </section>
+
+      <section class="link-card has-recommendation">
+        <div class="card-info">
+        <div class="link-title">사진</div>
+        <div class="link-desc">사진으로 기억해보기</div>
+        <a class="link-btn-text" href="https://www.instagram.com/es_03.21/">es_03.21 - 인스타그램</a>
+        </div>
+        <a class="recommended-link instagram-preview" href="https://www.instagram.com/es_03.21/" target="_blank" rel="noopener noreferrer">
+          <img class="recommendation-image" src="./insta%20thumnail.png" loading="lazy">
+        </a>
+      </section>
+    </main>
+  </div>
 </body>
+
 </html>
