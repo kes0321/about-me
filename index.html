@@ -10,14 +10,17 @@
 </head>
 
 <body>
-  <aside class="minesweeper" aria-label="지뢰찾기">
+  <section class="game-screen mine-screen" aria-label="Minesweeper">
+  <aside id="minesweeper" class="minesweeper" aria-label="지뢰찾기">
     <div class="mine-heading"><h2>지뢰찾기</h2><button id="mine-reset" type="button">새 게임 ↻</button></div>
     <div class="mine-board-wrap">
       <div id="mine-board" class="mine-board" aria-label="지뢰찾기 게임판"></div>
       <div id="mine-result" class="mine-result" role="status" aria-live="polite" hidden></div>
     </div>
   </aside>
-  <aside class="game-2048" aria-label="2048 게임">
+  </section>
+  <section class="game-screen tiles-screen" aria-label="2048">
+  <aside id="game-2048" class="game-2048" aria-label="2048 게임">
     <div class="mine-heading"><h2>2048</h2><button id="tile-reset" type="button">새 게임 ↻</button></div>
     <div class="tile-scores"><span>점수 <b id="tile-score">0</b></span><span>최고 <b id="tile-best">0</b></span></div>
     <div class="mine-board-wrap">
@@ -25,6 +28,8 @@
       <div id="tile-result" class="mine-result" role="status" aria-live="polite" hidden></div>
     </div>
   </aside>
+  </section>
+  <div class="intro-screen">
   <div class="body-container">
     <header class="body-header">
       <h1>김은성입니다</h1>
@@ -69,8 +74,15 @@
       </section>
     </main>
   </div>
+  </div>
   <script src="./minesweeper.js" defer></script>
   <script src="./2048.js" defer></script>
+  <nav class="game-shortcuts" aria-label="화면 이동">
+    <button type="button" aria-label="소개 화면" aria-current="page"></button>
+    <button type="button" aria-label="지뢰찾기 화면"></button>
+    <button type="button" aria-label="2048 화면"></button>
+  </nav>
+  <script src="./game-shortcuts.js" defer></script>
 </body>
 
 </html>
